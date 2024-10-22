@@ -1,3 +1,4 @@
+
 <script setup>
 definePageMeta({
   layout: "landing",
@@ -7,23 +8,22 @@ definePageMeta({
 <template>
   <LandingContainer>
     <LandingSectionhead>
-      <template v-slot:title>Contact</template>
-      <template v-slot:desc>I am here to help.</template>
+      <template v-slot:title>联系我们</template>
+      <template v-slot:desc>我在这里帮助您。</template>
     </LandingSectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
         <h2 class="font-medium text-2xl text-gray-800">
-          Contact Nuxtship Creator
+          联系 Nuxtship 创建者
         </h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Have something to say? I am here to help. Fill up the form or send
-          email.
+          有什么想说的吗？我在这里帮助您。填写表单或发送电子邮件。
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>1010 Vienna, Austria</span>
+            <span>奥地利维也纳 1010</span>
           </div>
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
@@ -45,3 +45,4 @@ definePageMeta({
     </div>
   </LandingContainer>
 </template>
+

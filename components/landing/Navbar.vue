@@ -1,24 +1,26 @@
 <script setup>
 const menuitems = [
   {
-    title: "Features",
+    title: "特性",
     path: "#",
   },
   {
-    title: "Pricing",
+    title: "定价",
     path: "/pricing",
   },
   {
-    title: "About",
+    title: "关于",
     path: "/about",
   },
   {
-    title: "Contact",
+    title: "联系",
     path: "/contact",
   },
 ];
 
 const open = ref(false);
+
+
 </script>
 
 <template>
@@ -37,7 +39,7 @@ const open = ref(false);
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <title>Menu</title>
+              <title>菜单</title>
               <path
                 v-show="open"
                 fill-rule="evenodd"
@@ -68,18 +70,19 @@ const open = ref(false);
           </li>
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <LandingLink href="#" styleName="muted" block size="md"
-            >Log in</LandingLink
+          <LandingLink href="/login" styleName="muted" block size="md"
+            >登录</LandingLink
           >
-          <LandingLink href="#" size="md" block>Sign up</LandingLink>
+          <LandingLink href="#" size="md" block>注册</LandingLink>
         </div>
       </nav>
       <div>
         <div class="hidden lg:flex items-center gap-4">
-          <a href="#">Log in</a>
-          <LandingLink href="#" size="md">Sign up</LandingLink>
+          <a href="/login">登录</a>
+          <LandingLink href="#" size="md">注册</LandingLink>
         </div>
       </div>
     </header>
   </LandingContainer>
 </template>
+
