@@ -3,7 +3,9 @@ import axios from "axios";
 /**
  * 小程序登录
  * code2Session
- * url: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html
+ * @param code 小程序登录凭证
+ * @doc https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html
+ * @return openid 用户唯一标识
  */
 const code2Session = async (code: string): Promise<string> => {
 

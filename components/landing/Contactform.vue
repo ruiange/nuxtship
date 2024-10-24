@@ -50,9 +50,10 @@ onMounted(() => {
 });
 </script>
 
+
 <template>
-  <!-- To make this contact form work, create your free access key from https://web3forms.com/
-     Then you will get all form submissions in your email inbox. -->
+  <!-- 为了让这个联系表单工作，请从 https://web3forms.com/ 创建您的免费访问密钥
+     然后您将在邮箱中收到所有表单提交。 -->
   <form
     action="https://api.web3forms.com/submit"
     method="POST"
@@ -61,7 +62,7 @@ onMounted(() => {
     novalidate
   >
     <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-    <!-- Create your free access key from https://web3forms.com/ -->
+    <!-- 从 https://web3forms.com/ 创建您的免费访问密钥 -->
     <input
       type="checkbox"
       class="hidden"
@@ -71,47 +72,48 @@ onMounted(() => {
     <div class="mb-5">
       <input
         type="text"
-        placeholder="Full Name"
+        placeholder="全名"
         required
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
         name="name"
       />
       <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-        Please provide your full name.
+        请输入您的全名。
       </div>
     </div>
     <div class="mb-5">
-      <label for="email_address" class="sr-only">Email Address</label
+      <label for="email_address" class="sr-only">电子邮件地址</label
       ><input
         id="email_address"
         type="email"
-        placeholder="Email Address"
+        placeholder="电子邮件地址"
         name="email"
         required
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
       />
       <div class="empty-feedback text-red-400 text-sm mt-1">
-        Please provide your email address.
+        请输入您的电子邮件地址。
       </div>
       <div class="invalid-feedback text-red-400 text-sm mt-1">
-        Please provide a valid email address.
+        请输入有效的电子邮件地址。
       </div>
     </div>
     <div class="mb-3">
       <textarea
         name="message"
         required
-        placeholder="Your Message"
+        placeholder="您的消息"
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none h-36 focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
       ></textarea>
       <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-        Please enter your message.
+        请输入您的消息。
       </div>
     </div>
-    <LandingButton type="submit" size="lg" block>Send Message</LandingButton>
+    <LandingButton type="submit" size="lg" block>发送消息</LandingButton>
     <div id="result" class="mt-3 text-center"></div>
   </form>
 </template>
+
 
 <style>
 .invalid-feedback,
