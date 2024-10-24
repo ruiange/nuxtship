@@ -5,36 +5,42 @@ import { defineMongooseModel } from '#nuxt/mongoose'
 export const UserSchema = defineMongooseModel({
     name: 'User',
     schema: {
+        // 邮件
         email: {
             type: 'string',
             unique: true,
         },
+        // 密码
         password: {
+            type: 'string',
+        },
+        // 微信小程序 openid
+        openid: {
+            type: 'string',
+        },
+        // 微信小程序 unionid
+        unionid:{
+            type: 'string'
+        },
+        // 昵称
+        nickname: {
+            type: 'string',
+        },
+        // 头像
+        avatar: {
+            type: 'string',
+        },
+        // 积分
+        gold: {
+            type: 'string',
+        },
+        // 角色
+        role: {
             type: 'string',
         },
     },
     hooks(schema) {
-        schema.pre('save', function (this, next) {
-            // TODO: better validation
-            if (this.password && this.email)
-                next()
 
-            throw createError({
-                statusCode: 500,
-                statusMessage: 'validation failed',
-            })
-            // this.password = Math.random().toString() as any
-
-            // bcrypt.genSalt(10, function(err, salt) {
-            //     if (err) return next(err);
-
-            //     bcrypt.hash(user.password, salt, function(err, hash) {
-            //         if (err) return next(err);
-            //         user.password = hash;
-            //         next();
-            //     })
-            // })
-        })
     },
 })
 
