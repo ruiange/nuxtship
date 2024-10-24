@@ -7,38 +7,42 @@ export const UserSchema = defineMongooseModel({
     schema: {
         // 邮件
         email: {
-            type: 'string',
+            type: 'String',
             unique: true,
         },
         // 密码
         password: {
-            type: 'string',
+            type: 'String',
         },
         // 微信小程序 openid
         openid: {
-            type: 'string',
+            type: 'String',
             unique: true,
         },
         // 微信小程序 unionid
         unionid:{
-            type: 'string'
+            type: 'String'
         },
         // 昵称
         nickname: {
-            type: 'string',
+            type: 'String',
         },
         // 头像
         avatar: {
-            type: 'string',
+            type: 'String',
         },
         // 积分
         gold: {
-            type: 'string',
+            type: 'number',
+            default: 0
         },
         // 角色
         role: {
-            type: 'string',
+            type: 'String',
         },
+        createdAt:{
+            type:'String'
+        }
     },
     hooks(schema) {
 
