@@ -33,7 +33,7 @@ export const UserSchema = defineMongooseModel({
         },
         // 积分
         gold: {
-            type: 'number',
+            type: 'Number',
             default: 0
         },
         // 角色
