@@ -17,6 +17,7 @@ const code2Session = async (code: string): Promise<string> => {
             grant_type: 'authorization_code'
         }
     })
+
     return data.openid
 }
 

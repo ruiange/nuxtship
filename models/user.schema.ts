@@ -17,6 +17,7 @@ export const UserSchema = defineMongooseModel({
         // 微信小程序 openid
         openid: {
             type: 'string',
+            unique: true,
         },
         // 微信小程序 unionid
         unionid:{
