@@ -21,6 +21,9 @@ export default defineEventHandler(async (event) => {
                 minimal: true
             }
         })
+        if('router' in data) {
+            delete data.router
+        }
         return data
     }catch (e:any){
         return {
