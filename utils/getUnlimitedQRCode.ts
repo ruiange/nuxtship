@@ -19,9 +19,9 @@ const getUnlimitedQRCode = async (scene: string, page: string = 'pages/index/ind
             data: {
                 scene: scene,
                 page,
-                check_path: true,
+                check_path: false,
                 width: 430,
-                env_version: 'release'
+                env_version: 'develop'
             }
         }
     )

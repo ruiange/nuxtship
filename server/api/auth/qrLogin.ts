@@ -14,7 +14,10 @@ import getUnlimitedQRCode from "~/utils/getUnlimitedQRCode";
 export default defineEventHandler(async (event) => {
     try {
         // 生成无限二维码图像
-        const buffer = await getUnlimitedQRCode('2323');
+
+        const scene = '1234';
+
+        const buffer = await getUnlimitedQRCode(scene,'pages/auth/auth');
 
         // 设置响应头，指定内容类型为PNG图像
         event.node.res.setHeader('Content-Type', 'image/png');
