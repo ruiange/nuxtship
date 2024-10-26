@@ -10,22 +10,21 @@ import axios from "axios";
  */
 const getUnlimitedQRCode = async (scene: string, page: string = 'pages/index/index'): Promise<string> => {
     const access_token = await getAccessToken()
-    console.log('-------------------')
-    console.log(access_token)
+
     const {data} = await axios(
         {
             method: 'post',
             url: `https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=${access_token}`,
+            responseType: "arraybuffer",
             data: {
                 scene: scene,
                 page,
                 check_path: true,
                 width: 430,
-                env_version: 'develop'
+                env_version: 'release'
             }
         }
     )
-    console.log('data', data)
     return data
 };
 export default getUnlimitedQRCode
