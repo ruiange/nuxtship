@@ -49,9 +49,12 @@ export default defineEventHandler(async (event) => {
 
     token = jwt.sign({id: userData._id, openid: userData.openid}, secretKey);
     return {
-        token, openid, userInfo: {
-            nickname: userData.nickname || '剑客无名',
-            avatarUrl: userData.avatar || null,
+        code: 200,
+        data: {
+            token, openid, userInfo: {
+                nickname: userData.nickname || '剑客无名',
+                avatarUrl: userData.avatar || null,
+            }
         }
     }
 })
