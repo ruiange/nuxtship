@@ -12,7 +12,10 @@ export default defineEventHandler(async (event) => {
     }
     try {
         const body = await readBody(event);
-        const {id} = body;
+        let id = null
+        if('id' in body&&body.id){
+            id = body.id
+        }
         const requestData = id ? {id} : {};
         const {data} = await axios({
             method: 'post',
