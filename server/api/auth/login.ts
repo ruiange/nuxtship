@@ -25,7 +25,6 @@ export default defineEventHandler(async (event) => {
 
     try {
         const user = await UserSchema.findOne({ email }).exec()
-
         if (!user) {
             return { error: 'User not found' }
         }
@@ -38,6 +37,6 @@ export default defineEventHandler(async (event) => {
         return { success: true, message: 'Logged in successfully' }
     } catch (error) {
         // 简单错误处理，可以根据需要进行更详细的错误分类
-        return { error: 'An error occurred during login' }
+        return { error: error.message }
     }
 })
