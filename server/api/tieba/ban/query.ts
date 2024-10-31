@@ -1,5 +1,6 @@
 import {defineEventHandler, readBody} from 'h3'
 import axios from "axios";
+import {id} from "postcss-selector-parser";
 
 export default defineEventHandler(async (event) => {
     if (event._method !== 'POST') {
@@ -11,16 +12,9 @@ export default defineEventHandler(async (event) => {
         })
     }
     try {
-        const body = await readBody(event);
-        let id = null
-        if('id' in body&&body.id){
-            id = body.id
-        }
-        const requestData = id ? {id} : {};
         const {data} = await axios({
             method: 'post',
-            url: 'https://tiebaapi.ruiange.work/ban', // 去掉多余的单引号
-            data: requestData // 使用构建的请求数据
+            url: 'https://tiebaapi.ruiange.work/ban'
         });
         return data;
     } catch (e) {
